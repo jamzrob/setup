@@ -1,0 +1,14 @@
+- hosts: localhost
+  tasks:
+    - name: oh-my-zsh
+      include_tasks: tasks/oh-my-zsh.yml
+    - name: nvim
+      include_tasks: tasks/nvim.yml
+    - name: node
+      include_tasks: tasks/node.yml
+    - name: pyenv
+      include_tasks: tasks/pyenv.yml
+    - name: brew
+      include_tasks: tasks/brew.yml
+    - name: dotfiles
+      include_tasks: tasks/dotfiles.yml

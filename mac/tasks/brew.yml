@@ -1,0 +1,49 @@
+- name: Install languages
+  community.general.homebrew:
+    name: ["ruby", "python", "rbenv", lua"]
+    state: present
+  tags:
+    - install
+    - languages
+    - homebrew
+    - dotfiles
+
+- name: Install parsers
+  community.general.homebrew:
+    name: ["jq", "readline"]
+    state: present
+  tags:
+    - install
+    - parsers
+    - homebrew
+    - dotfiles
+
+- name: Install searching
+  community.general.homebrew:
+    name: ["fzf", "ripgrep", "fd"]
+    state: present
+  tags:
+    - install
+    - searching
+    - homebrew
+    - dotfiles
+
+- name: Install tmux
+  community.general.homebrew:
+    name: ["tmux", "tmuxinator"]
+    state: present
+  tags:
+    - install
+    - tmux
+    - homebrew
+    - dotfiles
+
+- name: Install libraries
+  community.general.homebrew:
+    name: ["gh"]
+    state: present
+  tags:
+    - install
+    - libraries
+    - homebrew
+    - dotfiles

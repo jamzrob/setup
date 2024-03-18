@@ -1,0 +1,27 @@
+- name: Curl pyenv
+  shell: curl https://pyenv.run | zsh
+  tags:
+    - pyenv
+    - dotfiles
+
+- name: Clone pyenv
+  ansible.builtin.git:
+    repo: 'https://github.com/pyenv/pyenv-virtualenv.git'
+    dest: "$(pyenv root)/plugins/pyenv-virtualenv"
+  tags:
+    - pyenv
+    - dotfiles
+
+- name: Clone latest plugin
+  ansible.builtin.git:
+    repo: 'https://github.com/momo-lab/pyenv-install-latest.githttps://github.com/pyenv/pyenv-virtualenv.git'
+    dest: "$(pyenv root)/plugins/pyenv-install-latest"
+  tags:
+    - pyenv
+    - dotfiles
+
+- name: Installs latest pyenv
+  shell: pyenv install-latest
+  tags:
+    - pyenv
+    - dotfiles

@@ -1,0 +1,28 @@
+- name: Install cargo
+  shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  tags:
+    - cargo
+    - nvim
+    - dotfiles
+
+- name: Get bob
+  shell: cargo install --git https://github.com/MordechaiHadad/bob.git
+  tags:
+    - cargo
+    - nvim
+    - dotfiles
+
+- name: Install bob
+  community.general.cargo:
+    name: bob
+    state: present
+  tags:
+    - bob
+    - nvim
+    - dotfiles
+
+- name: Install nvim
+  shell: bob install stable
+  tags:
+    - nvim
+    - dotfiles
